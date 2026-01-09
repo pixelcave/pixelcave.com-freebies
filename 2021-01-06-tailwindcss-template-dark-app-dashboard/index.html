@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Freebie 43 - Dark App Dashboard (Tailwind CSS) by pixelcave</title>
+
+    <meta
+      name="description"
+      content="Freebie 43 - Dark App Dashboard (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      /* Class based dark mode */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme configuration */
+      @theme {
+        /* Fonts */
+        --default-font-family: "Inter";
+      }
+    </style>
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine.js (x-cloak - https://alpinejs.dev/directives/cloak) -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div
+      x-data="{ userDropdownOpen: false, mobileNavOpen: false }"
+      class="mx-auto flex min-h-screen w-full flex-col bg-gray-800 text-gray-300"
+    >
+      <!-- Page Header -->
+      <header
+        id="page-header"
+        class="top-0 right-0 left-0 z-30 flex h-16 flex-none items-center bg-gray-900 shadow-xs"
+      >
+        <div
+          class="container mx-auto flex justify-between px-4 lg:px-8 xl:max-w-6xl"
+        >
+          <!-- Left Section -->
+          <div class="flex items-center">
+            <a
+              href="javascript:void(0)"
+              class="group inline-flex items-center gap-2 text-lg font-bold tracking-wide text-white hover:text-white/90"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                data-slot="icon"
+                class="hi-mini hi-cursor-arrow-rays inline-block size-5 text-blue-300 group-hover:text-blue-400 group-active:scale-90"
+              >
+                <path
+                  d="M10 1a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 1ZM5.05 3.05a.75.75 0 0 1 1.06 0l1.062 1.06A.75.75 0 1 1 6.11 5.173L5.05 4.11a.75.75 0 0 1 0-1.06ZM14.95 3.05a.75.75 0 0 1 0 1.06l-1.06 1.062a.75.75 0 0 1-1.062-1.061l1.061-1.06a.75.75 0 0 1 1.06 0ZM3 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 3 8ZM14 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 14 8ZM7.172 10.828a.75.75 0 0 1 0 1.061L6.11 12.95a.75.75 0 0 1-1.06-1.06l1.06-1.06a.75.75 0 0 1 1.06 0ZM10.766 7.51a.75.75 0 0 0-1.37.365l-.492 6.861a.75.75 0 0 0 1.204.65l1.043-.799.985 3.678a.75.75 0 0 0 1.45-.388l-.978-3.646 1.292.204a.75.75 0 0 0 .74-1.16l-3.874-5.764Z"
+                />
+              </svg>
+              <span class="hidden sm:inline">Analytics Pro</span>
+            </a>
+          </div>
+          <!-- Left Section -->
+
+          <!-- Right Section -->
+          <div class="flex items-center gap-2">
+            <!-- Desktop Navigation -->
+            <nav class="hidden items-center gap-2 text-sm lg:flex">
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm bg-gray-800 px-3 py-2 font-medium text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-fire inline-block size-4 opacity-50"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.074.945A4.993 4.993 0 0 0 6 5v.032c.004.6.114 1.176.311 1.709.16.428-.204.91-.61.7a5.023 5.023 0 0 1-1.868-1.677c-.202-.304-.648-.363-.848-.058a6 6 0 1 0 8.017-1.901l-.004-.007a4.98 4.98 0 0 1-2.18-2.574c-.116-.31-.477-.472-.744-.28Zm.78 6.178a3.001 3.001 0 1 1-3.473 4.341c-.205-.365.215-.694.62-.59a4.008 4.008 0 0 0 1.873.03c.288-.065.413-.386.321-.666A3.997 3.997 0 0 1 8 8.999c0-.585.126-1.14.351-1.641a.42.42 0 0 1 .503-.235Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Dashboard</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm px-3 py-2 font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-globe-alt inline-block size-4 opacity-50"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.757 4.5c.18.217.376.42.586.608.153-.61.354-1.175.596-1.678A5.53 5.53 0 0 0 3.757 4.5ZM8 1a6.994 6.994 0 0 0-7 7 7 7 0 1 0 7-7Zm0 1.5c-.476 0-1.091.386-1.633 1.427-.293.564-.531 1.267-.683 2.063A5.48 5.48 0 0 0 8 6.5a5.48 5.48 0 0 0 2.316-.51c-.152-.796-.39-1.499-.683-2.063C9.09 2.886 8.476 2.5 8 2.5Zm3.657 2.608a8.823 8.823 0 0 0-.596-1.678c.444.298.842.659 1.182 1.07-.18.217-.376.42-.586.608Zm-1.166 2.436A6.983 6.983 0 0 1 8 8a6.983 6.983 0 0 1-2.49-.456 10.703 10.703 0 0 0 .202 2.6c.72.231 1.49.356 2.288.356.798 0 1.568-.125 2.29-.356a10.705 10.705 0 0 0 .2-2.6Zm1.433 1.85a12.652 12.652 0 0 0 .018-2.609c.405-.276.78-.594 1.117-.947a5.48 5.48 0 0 1 .44 2.262 7.536 7.536 0 0 1-1.575 1.293Zm-2.172 2.435a9.046 9.046 0 0 1-3.504 0c.039.084.078.166.12.244C6.907 13.114 7.523 13.5 8 13.5s1.091-.386 1.633-1.427c.04-.078.08-.16.12-.244Zm1.31.74a8.5 8.5 0 0 0 .492-1.298c.457-.197.893-.43 1.307-.696a5.526 5.526 0 0 1-1.8 1.995Zm-6.123 0a8.507 8.507 0 0 1-.493-1.298 8.985 8.985 0 0 1-1.307-.696 5.526 5.526 0 0 0 1.8 1.995ZM2.5 8.1c.463.5.993.935 1.575 1.293a12.652 12.652 0 0 1-.018-2.608 7.037 7.037 0 0 1-1.117-.947 5.48 5.48 0 0 0-.44 2.262Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Domains</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm px-3 py-2 font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-server-stack inline-block size-4 opacity-50"
+                >
+                  <path
+                    d="M5.354 2a2 2 0 0 0-1.857 1.257l-.338.845C3.43 4.035 3.71 4 4 4h8c.29 0 .571.035.84.102l-.337-.845A2 2 0 0 0 10.646 2H5.354Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 13a2 2 0 0 1 2-2h8a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Zm10.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9 13.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM4 5.5a2 2 0 1 0 0 4h8a2 2 0 1 0 0-4H4Zm8 2.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM9.75 7.5a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Servers</span>
+              </a>
+            </nav>
+            <!-- END Desktop Navigation -->
+
+            <!-- User Dropdown -->
+            <div class="relative inline-block">
+              <!-- Dropdown Toggle Button -->
+              <button
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-sm px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+                id="tk-dropdown-layouts-user"
+                aria-haspopup="true"
+                x-bind:aria-expanded="userDropdownOpen"
+                x-on:click="userDropdownOpen = true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-user-circle inline-block size-4 opacity-50"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Zm-5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM8 9c-1.825 0-3.422.977-4.295 2.437A5.49 5.49 0 0 0 8 13.5a5.49 5.49 0 0 0 4.294-2.063A4.997 4.997 0 0 0 8 9Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>John Doe</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-chevron-down inline-block size-4 opacity-50"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <!-- END Dropdown Toggle Button -->
+
+              <!-- Dropdown -->
+              <div
+                x-cloak
+                x-show="userDropdownOpen"
+                x-transition:enter="transition ease-out duration-150"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition ease-in duration-100"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                x-on:click.away="userDropdownOpen = false"
+                role="menu"
+                aria-labelledby="tk-dropdown-layouts-user"
+                class="absolute right-0 mt-2 w-48 origin-top-right rounded-sm shadow-xl"
+              >
+                <div
+                  class="divide-y divide-gray-700 rounded-sm bg-gray-800/90 ring-1 ring-black/5"
+                >
+                  <div class="space-y-1 p-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800/50 hover:text-white focus:bg-gray-800 focus:text-gray-200 focus:outline-hidden"
+                      role="menuitem"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        data-slot="icon"
+                        class="hi-mini hi-user-circle inline-block size-5 opacity-50"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Zm-5.5-2.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0ZM10 12a5.99 5.99 0 0 0-4.793 2.39A6.483 6.483 0 0 0 10 16.5a6.483 6.483 0 0 0 4.793-2.11A5.99 5.99 0 0 0 10 12Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span>Profile</span>
+                    </a>
+                  </div>
+                  <div class="space-y-1 p-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800/50 hover:text-white focus:bg-gray-800 focus:text-gray-200 focus:outline-hidden"
+                      role="menuitem"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        data-slot="icon"
+                        class="hi-mini hi-cog-6-tooth inline-block size-5 opacity-50"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span>Settings</span>
+                    </a>
+                  </div>
+                  <div class="space-y-1 p-2">
+                    <form onsubmit="return false;">
+                      <button
+                        type="submit"
+                        class="flex w-full items-center gap-2 rounded-sm px-3 py-2 text-left text-sm font-medium text-gray-400 hover:bg-gray-800/50 hover:text-white focus:bg-gray-800 focus:text-gray-200 focus:outline-hidden"
+                        role="menuitem"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          data-slot="icon"
+                          class="hi-mini hi-lock-closed inline-block size-5 opacity-50"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <span>Sign out</span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- END Dropdown -->
+            </div>
+            <!-- END User Dropdown -->
+
+            <!-- Toggle Mobile Navigation -->
+            <div class="lg:hidden">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-sm px-3 py-2 text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+                x-on:click="mobileNavOpen = !mobileNavOpen"
+              >
+                <svg
+                  class="hi-solid hi-menu inline-block h-4 w-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            <!-- END Toggle Mobile Navigation -->
+          </div>
+          <!-- END Right Section -->
+        </div>
+      </header>
+      <!-- END Page Header -->
+
+      <!-- Page Content -->
+      <main id="page-content" class="flex max-w-full flex-auto flex-col">
+        <!-- Mobile Navigation -->
+        <div
+          x-show="mobileNavOpen"
+          class="bg-gray-900 lg:hidden"
+          style="display: none"
+        >
+          <div class="container mx-auto p-4 lg:p-8 xl:max-w-6xl">
+            <nav class="flex flex-col gap-2">
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm bg-gray-800 px-3 py-2 font-medium text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-mini hi-fire inline-block size-5 opacity-50"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M13.5 4.938a7 7 0 1 1-9.006 1.737c.202-.257.59-.218.793.039.278.352.594.672.943.954.332.269.786-.049.773-.476a5.977 5.977 0 0 1 .572-2.759 6.026 6.026 0 0 1 2.486-2.665c.247-.14.55-.016.677.238A6.967 6.967 0 0 0 13.5 4.938ZM14 12a4 4 0 0 1-4 4c-1.913 0-3.52-1.398-3.91-3.182-.093-.429.44-.643.814-.413a4.043 4.043 0 0 0 1.601.564c.303.038.531-.24.51-.544a5.975 5.975 0 0 1 1.315-4.192.447.447 0 0 1 .431-.16A4.001 4.001 0 0 1 14 12Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Dashboard</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm px-3 py-2 font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+              >
+                <svg
+                  class="hi-solid hi-user-circle inline-block h-5 w-5 opacity-50"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Domains</span>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center gap-2 rounded-sm px-3 py-2 font-medium text-gray-400 hover:bg-gray-800 hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-mini hi-server-stack inline-block size-5 opacity-50"
+                >
+                  <path
+                    d="M4.464 3.162A2 2 0 0 1 6.28 2h7.44a2 2 0 0 1 1.816 1.162l1.154 2.5c.067.145.115.291.145.438A3.508 3.508 0 0 0 16 6H4c-.288 0-.568.035-.835.1.03-.147.078-.293.145-.438l1.154-2.5Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 9.5a2 2 0 0 1 2-2h12a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Zm13.24 0a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V9.5Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V9.5a.75.75 0 0 0-.75-.75h-.01ZM2 15a2 2 0 0 1 2-2h12a2 2 0 1 1 0 4H4a2 2 0 0 1-2-2Zm13.24 0a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span>Servers</span>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <!-- END Mobile Navigation -->
+
+        <!-- Page Section -->
+        <div
+          class="container mx-auto space-y-4 p-4 lg:space-y-8 lg:p-8 xl:max-w-6xl"
+        >
+          <!-- Quick Stats -->
+          <div
+            class="grid grid-cols-2 rounded-2xl bg-gray-900/50 p-5 lg:grid-cols-4"
+          >
+            <div class="p-5">
+              <dl>
+                <dt
+                  class="text-sm font-semibold tracking-wider text-gray-400 uppercase"
+                >
+                  Pageviews
+                </dt>
+                <dd class="pt-2 pb-3 text-4xl font-semibold">300k</dd>
+              </dl>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-arrow-up inline-block size-4 text-emerald-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 14a.75.75 0 0 1-.75-.75V4.56L4.03 7.78a.75.75 0 0 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06L8.75 4.56v8.69A.75.75 0 0 1 8 14Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-semibold text-gray-400">30%</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <dl>
+                <dt
+                  class="text-sm font-semibold tracking-wider text-gray-400 uppercase"
+                >
+                  Unq Visits
+                </dt>
+                <dd class="pt-2 pb-3 text-4xl font-semibold">220k</dd>
+              </dl>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-arrow-up inline-block size-4 text-emerald-500"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 14a.75.75 0 0 1-.75-.75V4.56L4.03 7.78a.75.75 0 0 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06L8.75 4.56v8.69A.75.75 0 0 1 8 14Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-semibold text-gray-400">35%</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <dl>
+                <dt
+                  class="text-sm font-semibold tracking-wider text-gray-400 uppercase"
+                >
+                  Avg visit
+                </dt>
+                <dd class="pt-2 pb-3 text-4xl font-semibold">03:45</dd>
+              </dl>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-arrow-down inline-block size-4 text-rose-400"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 2a.75.75 0 0 1 .75.75v8.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.22 3.22V2.75A.75.75 0 0 1 8 2Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-semibold text-gray-400">5%</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <dl>
+                <dt
+                  class="text-sm font-semibold tracking-wider text-gray-400 uppercase"
+                >
+                  Bounce Rate
+                </dt>
+                <dd class="pt-2 pb-3 text-4xl font-semibold">25%</dd>
+              </dl>
+              <div class="flex items-center gap-2">
+                <svg
+                  class="hi-solid hi-arrow-up inline-block h-3 w-3 rotate-180 text-emerald-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm font-semibold text-gray-400">3%</span>
+              </div>
+            </div>
+          </div>
+          <!-- END Quick Stats -->
+
+          <!-- Main Chart -->
+          <div class="rounded-2xl bg-gray-900/50 p-5">
+            <div style="height: 450px">
+              <canvas id="main-chart"></canvas>
+            </div>
+          </div>
+          <!-- END Main Chart -->
+
+          <!-- Details -->
+          <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+            <!-- Pages -->
+            <div class="rounded-2xl bg-gray-900/50 p-5">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="p-2 text-left font-medium text-gray-400">
+                      Page
+                    </th>
+                    <th class="p-2 text-right font-medium text-gray-400">
+                      Pageviews
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 42%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/blog/how-to-build-a-laravel-app</a
+                      >
+                    </td>
+                    <td class="text-right">6849</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 30%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/</a
+                      >
+                    </td>
+                    <td class="text-right">4216</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 28%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/blog/working-from-home-has-never-been-easier</a
+                      >
+                    </td>
+                    <td class="text-right">3895</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 25%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/products/dark-tailwind-dashboard</a
+                      >
+                    </td>
+                    <td class="text-right">2863</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 22%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/freebies/landing-page</a
+                      >
+                    </td>
+                    <td class="text-right">2552</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 12%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/blog/bootstrap-5-new-features</a
+                      >
+                    </td>
+                    <td class="text-right">1236</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 10%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/about</a
+                      >
+                    </td>
+                    <td class="text-right">1054</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 8%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >/blog/inspiring-results-marketing</a
+                      >
+                    </td>
+                    <td class="text-right">869</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- END Pages -->
+
+            <!-- Referrers -->
+            <div class="rounded-2xl bg-gray-900/50 p-5">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr>
+                    <th class="p-2 text-left font-medium text-gray-400">
+                      Referrers
+                    </th>
+                    <th class="p-2 text-right font-medium text-gray-400">
+                      Pageviews
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 76%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >Google</a
+                      >
+                    </td>
+                    <td class="text-right">25630</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 14%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >Bing</a
+                      >
+                    </td>
+                    <td class="text-right">3260</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 13%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >Facebook</a
+                      >
+                    </td>
+                    <td class="text-right">3158</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 12%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >Twitter</a
+                      >
+                    </td>
+                    <td class="text-right">2800</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 8%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >DuckDuckGo</a
+                      >
+                    </td>
+                    <td class="text-right">2769</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 8%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >Yahoo</a
+                      >
+                    </td>
+                    <td class="text-right">2200</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 6%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >example.com</a
+                      >
+                    </td>
+                    <td class="text-right">856</td>
+                  </tr>
+                  <tr>
+                    <td class="relative p-2">
+                      <div
+                        class="absolute top-0 bottom-0 left-0 my-px w-3/4 bg-white opacity-5"
+                        style="width: 6%"
+                      ></div>
+                      <a
+                        class="relative hover:underline"
+                        href="javascript:void(0)"
+                        >example.io</a
+                      >
+                    </td>
+                    <td class="text-right">736</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- END Referrers -->
+          </div>
+          <!-- Details -->
+        </div>
+        <!-- END Page Section -->
+      </main>
+      <!-- END Page Content -->
+
+      <!-- Page Footer -->
+      <footer
+        id="page-footer"
+        class="flex flex-none items-center bg-gray-900/75"
+      >
+        <div
+          class="container mx-auto flex flex-col px-4 text-center text-sm md:flex-row md:justify-between md:text-left lg:px-8 xl:max-w-6xl"
+        >
+          <div class="pt-4 pb-1 md:pb-4">
+            <span class="font-medium">Dark App Dashboard</span> ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+          </div>
+          <div
+            class="inline-flex items-center justify-center gap-1 pt-1 pb-4 md:pt-4"
+          >
+            <span>Crafted with</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              data-slot="icon"
+              class="hi-mini hi-heart inline-block size-5 text-rose-500"
+            >
+              <path
+                d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z"
+              />
+            </svg>
+            <span
+              >by
+              <a
+                href="https://pixelcave.com"
+                target="_blank"
+                class="font-medium text-blue-400 hover:text-blue-500 hover:underline"
+                >pixelcave</a
+              ></span
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- END Page Footer -->
+    </div>
+    <!-- END Page Container -->
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Set up example charts -->
+    <script>
+      // Set Global Chart.js configuration
+      Chart.defaults.color = "rgb(209,213,219)";
+      Chart.defaults.font.weight = "600";
+      Chart.defaults.scale.grid.color = "transparent";
+      Chart.defaults.scale.grid.zeroLineColor = "transparent";
+      Chart.defaults.scale.ticks.beginAtZero = true;
+      Chart.defaults.elements.line.borderWidth = 2;
+      Chart.defaults.elements.point.radius = 5;
+      Chart.defaults.elements.point.hoverRadius = 7;
+      Chart.defaults.plugins.tooltip.radius = 3;
+      Chart.defaults.plugins.legend.labels.boxWidth = 12;
+
+      // Init Chart
+      var chart = new Chart(document.getElementById("main-chart"), {
+        type: "bar",
+        data: {
+          labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+          datasets: [
+            {
+              label: "Unique Visits",
+              fill: true,
+              backgroundColor: "rgba(6, 101, 208, .75)",
+              borderColor: "rgba(6, 101, 208, 1)",
+              pointBackgroundColor: "rgba(6, 101, 208, 1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(6, 101, 208, 1)",
+              data: [3400, 4200, 6200, 7800, 8300, 5700, 6800],
+            },
+            {
+              label: "Pageviews",
+              fill: true,
+              backgroundColor: "rgba(108, 117, 125, .25)",
+              borderColor: "rgba(108, 117, 125, .75)",
+              pointBackgroundColor: "rgba(108, 117, 125, 1)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgba(108, 117, 125, 1)",
+              data: [13000, 16000, 12500, 16000, 18700, 11000, 14300],
+            },
+          ],
+        },
+        options: { responsive: true, maintainAspectRatio: false, tension: 0.4 },
+      });
+    </script>
+  </body>
+</html>

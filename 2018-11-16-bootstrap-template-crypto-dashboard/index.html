@@ -1,0 +1,298 @@
+<!doctype html>
+<!--[if lte IE 9]>         <html lang="en" class="lt-ie10 lt-ie10-msg"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Freebie 08 - Crypto Dashboard by pixelcave</title>
+
+        <meta name="description" content="Freebie 08 - Crypto Dashboard by pixelcave. Check out more at https://pixelcave.com">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+
+        <!-- Icons -->
+        <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
+        <link rel="apple-touch-icon" href="assets/img/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" href="assets/img/favicons/favicon-192x192.png">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+        <!-- Page Container -->
+        <div id="page-container">
+            <!-- Main Container -->
+            <div id="main-container">
+                <!-- Header -->
+                <nav class="navbar navbar-light bg-primary">
+                    <div class="container justify-content-center my-2">
+                        <a class="text-center bg-white rounded p-2" href="index.html">
+                            <i class="fab fa-2x fa-bitcoin"></i>
+                        </a>
+                    </div>
+                </nav>
+                <!-- END Header -->
+
+                <!-- Dashboard -->
+                <div class="container mt-4">
+                    <!-- Statistics -->
+                    <div class="row text-center">
+                        <div class="col-lg-4">
+                            <div class="block">
+                                <div class="h2 mb-0">
+                                    $18.961
+                                </div>
+                                <div>
+                                    <div class="h6 mt-2 mb-0 text-muted text-uppercase font-w400">Bitcoin Price</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="block">
+                                <div class="h2 mb-0">
+                                    <span class="text-success">+</span>$1.685
+                                </div>
+                                <div>
+                                    <div class="h6 mt-2 mb-0 text-muted text-uppercase font-w400">Since Last Week (USD)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="block">
+                                <div class="h2 mb-0">
+                                    <span class="text-success">+</span>9,75%
+                                </div>
+                                <div>
+                                    <div class="h6 mt-2 mb-0 text-muted text-uppercase font-w400">Since Last Week (%)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Statistics -->
+
+                    <!-- Bitcoin USD Price -->
+                    <div class="block">
+                        <div class="h6 pb-3 mb-4 border-b">
+                            <span class="float-right text-muted">Last 30 days</span>
+                            <i class="fa fa-chart-area mr-1"></i> Bitcoin USD Price
+                        </div>
+                        <div>
+                            <canvas id="js-chartjs-bitcoin" height="300"></canvas>
+                        </div>
+                    </div>
+                    <!-- END Bitcoin USD Price -->
+
+                    <!-- Account Activity -->
+                    <div class="block">
+                        <div class="h6 pb-3 mb-0 border-b">
+                            <span class="float-right text-muted">Activity</span>
+                            <i class="fa fa-user mr-1"></i> Account
+                        </div>
+                        <div class="border-b py-4">
+                            <div class="row text-center">
+                                <div class="col-lg-6 py-3">
+                                    <span class="h1 text-primary mb-">1.6 <span class="font-w300 text-dark">BTC</span></span>
+                                </div>
+                                <div class="col-lg-6 py-3">
+                                    <span class="h1 text-primary mb-0">30.337,6 <span class="font-w300 text-dark">USD</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-valign">
+                            <tbody>
+                                <tr>
+                                    <td class="text-center" style="width: 50px;">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        15
+                                    </td>
+                                    <td class="text-center text-warning" style="width: 40px;">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Bought Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">+0.030000 BTC</div>
+                                        <div class="text-muted">-568,83 USD</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        12
+                                    </td>
+                                    <td class="text-center text-warning">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Bought Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">+0.030000 BTC</div>
+                                        <div class="text-muted">-521,64 USD</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        11
+                                    </td>
+                                    <td class="text-center text-success">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Sold Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">-0.060000 BTC</div>
+                                        <div class="text-muted">+1014,25 USD</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        9
+                                    </td>
+                                    <td class="text-center text-warning">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Bought Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">+0.060000 BTC</div>
+                                        <div class="text-muted">-1014,25 USD</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        5
+                                    </td>
+                                    <td class="text-center text-success">
+                                        <i class="fa fa-arrow-right"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Sold Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">-0.045000 BTC</div>
+                                        <div class="text-muted">+820,93 USD</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">
+                                        <div class="font-w600 text-uppercase">Dec</div>
+                                        5
+                                    </td>
+                                    <td class="text-center text-warning">
+                                        <i class="fa fa-arrow-left"></i>
+                                    </td>
+                                    <td class="d-none d-sm-table-cell">
+                                        <div class="h5 mb-1">Bought Bitcoin</div>
+                                        <div class="text-muted">Using USD Wallet</div>
+                                    </td>
+                                    <td class="text-right">
+                                        <div class="h5 mb-1">+0.040000 BTC</div>
+                                        <div class="text-muted">-785,69 USD</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <a class="btn btn-light font-w600" href="javascript:void(0)">
+                                <i class="fa fa-eye mr-1"></i> More transactions..
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END Account Activity -->
+                </div>
+                <!-- END Dashboard -->
+            </div>
+            <!-- END Main Container -->
+
+            <!-- Footer -->
+            <div class="bg-white border-t">
+                <footer class="container my-2">
+                    <div class="row">
+                        <div class="col-sm text-center text-sm-left my-2">
+                            <small><strong>Crypto Dashboard</strong> &copy; 2017</small>
+                        </div>
+                        <div class="col-sm text-center text-sm-right my-2">
+                            <small>Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://pixelcave.com">pixelcave</a></small>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- END Footer -->
+        </div>
+        <!-- END Page Container -->
+
+        <!-- JavaScript Code -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+        <script>
+            // Set Global Chart.js configuration
+            Chart.defaults.global.defaultFontColor              = "#adb5bd";
+            Chart.defaults.scale.gridLines.color                = "transparent";
+            Chart.defaults.global.elements.point.radius         = 5;
+            Chart.defaults.global.elements.point.hoverRadius    = 7;
+            Chart.defaults.global.legend.display                = false;
+
+            // Set up labels
+            var chartBitcoinlabels = [];
+            for (i = 0; i < 30; i++) {
+                chartBitcoinlabels[i] = (i === 29) ? '1 day ago' : (30 - i) + ' days ago';
+            }
+
+            // Sales Chart
+            var chartBitcoinContainer = document.getElementById("js-chartjs-bitcoin").getContext('2d');
+            var chartBitcoin = new Chart(chartBitcoinContainer, {
+                type: 'line',
+                data: {
+                    labels: chartBitcoinlabels,
+                    datasets: [
+                        {
+                            label: 'Bitcoin Price',
+                            fill: true,
+                            backgroundColor: 'rgba(255,193,7,.25)',
+                            borderColor: 'rgba(255,193,7,1)',
+                            pointBackgroundColor: 'rgba(255,193,7,1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(255,193,7,1)',
+                            data: [8007, 8255, 8059, 8268, 8148, 8250, 8707, 9284, 9718, 9950, 9879, 10147, 10883, 11071, 11332, 11584, 11878, 13540, 16501, 16007, 15142, 14869, 16762, 17276, 16808, 16678, 17771, 19498, 19289, 18961]
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                suggestedMin: 6000,
+                                suggestedMax: 20000
+                            }
+                        }]
+                    },
+                    tooltips: {
+                        intersect: false,
+                        callbacks: {
+                            label: function(tooltipItems, data) {
+                                return ' $' + tooltipItems.yLabel;
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

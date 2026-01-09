@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Freebie 38 - Pricing Tables (Tailwind CSS) by pixelcave</title>
+
+    <meta
+      name="description"
+      content="Freebie 38 - Pricing Tables (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      /* Class based dark mode */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme configuration */
+      @theme {
+        /* Fonts */
+        --default-font-family: "Inter";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div class="min-h-dvh bg-gray-100 text-gray-800">
+      <!-- Pricing Tables -->
+      <div class="container mx-auto max-w-6xl px-4 py-12 lg:px-8 lg:py-16">
+        <div class="text-center">
+          <div
+            class="text-sm font-semibold tracking-wider text-indigo-600 uppercase"
+          >
+            Pricing Plans
+          </div>
+          <h2 class="mb-2 text-3xl font-extrabold md:text-4xl">
+            Choose the best plan for you
+          </h2>
+          <h3
+            class="mb-10 text-lg text-balance text-gray-700 lg:mx-auto lg:w-2/3"
+          >
+            Amazing features are included with each one but feel free to explore
+            the possibilities based on your requirements.
+          </h3>
+        </div>
+        <div class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+          <!-- Freelancer Plan -->
+          <div
+            class="flex flex-col rounded-lg border-4 border-white bg-white shadow-sm"
+          >
+            <div class="grow p-5 text-center lg:p-6">
+              <div
+                class="mb-4 inline-block rounded-full bg-gray-200/75 px-2.5 py-1 text-xs font-semibold tracking-wider text-gray-700 uppercase"
+              >
+                Freelancer
+              </div>
+              <div>
+                <span class="text-3xl font-extrabold lg:text-4xl">$29</span>
+                <span class="font-medium text-gray-600">/month</span>
+              </div>
+              <p class="mt-2 text-sm text-gray-600">
+                Best plan if you are a solo developer
+              </p>
+            </div>
+            <div class="space-y-6 rounded-b-lg bg-gray-50 p-6 text-gray-700">
+              <ul class="space-y-4 text-sm">
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>100</strong> Custom Projects</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>50</strong> Paying Clients</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>10GB</strong> SSD Storage</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>1TB</strong> High Speed Bandwidth</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>24/7</strong> Email Support</span>
+                </li>
+              </ul>
+              <a
+                href="javascript:void(0)"
+                class="block w-full rounded-sm bg-gray-700 px-4 py-3 text-center font-semibold text-white hover:bg-gray-900"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+          <!-- END Freelancer Plan -->
+
+          <!-- Agency Plan -->
+          <div
+            class="flex flex-col rounded-lg border-4 border-indigo-300 bg-white shadow-xs"
+          >
+            <div class="grow p-5 text-center lg:p-6">
+              <div
+                class="mb-4 inline-flex items-center gap-1 rounded-full bg-indigo-100/75 px-2.5 py-1 text-xs font-semibold tracking-wider text-indigo-700 uppercase"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-micro hi-hand-thumb-up inline-block size-4"
+                >
+                  <path
+                    d="M2.09 15a1 1 0 0 0 1-1V8a1 1 0 1 0-2 0v6a1 1 0 0 0 1 1ZM5.765 13H4.09V8c.663 0 1.218-.466 1.556-1.037a4.02 4.02 0 0 1 1.358-1.377c.478-.292.907-.706.989-1.26V4.32a9.03 9.03 0 0 0 0-2.642c-.028-.194.048-.394.224-.479A2 2 0 0 1 11.09 3c0 .812-.08 1.605-.235 2.371a.521.521 0 0 0 .502.629h1.733c1.104 0 2.01.898 1.901 1.997a19.831 19.831 0 0 1-1.081 4.788c-.27.747-.998 1.215-1.793 1.215H9.414c-.215 0-.428-.035-.632-.103l-2.384-.794A2.002 2.002 0 0 0 5.765 13Z"
+                  />
+                </svg>
+                <span>Agency</span>
+              </div>
+              <div>
+                <span class="text-3xl font-extrabold lg:text-4xl">$99</span>
+                <span class="font-medium text-gray-600">/month</span>
+              </div>
+              <p class="mt-2 text-sm text-gray-600">
+                For large teams working with many clients
+              </p>
+            </div>
+            <div class="space-y-6 rounded-b-lg bg-gray-50 p-6 text-gray-700">
+              <ul class="space-y-4 text-sm">
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>1000</strong> Custom Projects</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>200</strong> Paying Clients</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>100GB</strong> SSD Storage</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>10TB</strong> High Speed Bandwidth</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>24/7</strong> Email Support</span>
+                </li>
+              </ul>
+              <a
+                href="javascript:void(0)"
+                class="block w-full rounded-sm bg-indigo-700 px-4 py-3 text-center font-semibold text-white hover:bg-indigo-900"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+          <!-- END Agency Plan -->
+
+          <!-- Enterprise Plan -->
+          <div
+            class="flex flex-col rounded-lg border-4 border-white bg-white shadow-sm"
+          >
+            <div class="grow p-5 text-center lg:p-6">
+              <span
+                class="mb-4 inline-block rounded-full bg-gray-200/75 px-2.5 py-1 text-xs font-semibold tracking-wider text-gray-700 uppercase"
+              >
+                Enterprise
+              </span>
+              <div>
+                <span class="text-3xl font-extrabold lg:text-4xl">$299</span>
+                <span class="font-medium text-gray-600">/month</span>
+              </div>
+              <p class="mt-2 text-sm text-gray-600">
+                Custom solutions for your needs
+              </p>
+            </div>
+            <div class="space-y-6 rounded-b-lg bg-gray-50 p-6 text-gray-700">
+              <ul class="space-y-4 text-sm">
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Unlimited</strong> Custom Projects</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Unlimited</strong> Paying Clients</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Unlimited</strong> SSD Storage</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Unlimited</strong> High Speed Bandwidth</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="inline-block size-5 text-emerald-500"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>24/7</strong> Priority Email Support</span>
+                </li>
+              </ul>
+              <a
+                href="javascript:void(0)"
+                class="block w-full rounded-sm bg-gray-700 px-4 py-3 text-center font-semibold text-white hover:bg-gray-900"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+          <!-- END Enterprise Plan -->
+        </div>
+      </div>
+      <!-- END Pricing Tables -->
+
+      <!-- Footer -->
+      <div class="mt-6 space-y-2 text-center text-sm text-gray-600">
+        <p class="font-semibold">
+          Pricing Tables &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+        </p>
+        <p class="inline-flex items-center gap-1">
+          <span>Crafted with</span>
+          <svg
+            class="size-5 text-red-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span
+            >by
+            <a
+              class="font-semibold text-indigo-600 hover:text-indigo-700"
+              href="https://pixelcave.com"
+              >pixelcave</a
+            ></span
+          >
+        </p>
+      </div>
+      <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+  </body>
+</html>

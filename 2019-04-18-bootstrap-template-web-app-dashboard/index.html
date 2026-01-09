@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Freebie 24 - Web App Dashboard by pixelcave</title>
+
+        <meta name="description" content="Freebie 24 - Web App Dashboard. Check out more at https://pixelcave.com">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+
+        <!-- Icons -->
+        <link rel="shortcut icon" href="assets/media/favicons/favicon.png">
+        <link rel="apple-touch-icon" href="assets/media/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" href="assets/media/favicons/favicon-192x192.png">
+
+        <!-- Stylesheets -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/main.min.css">
+    </head>
+    <body>
+        <!-- Page Container -->
+        <div id="page-container">
+            <!-- Header -->
+            <!-- Background by https://unsplash.com -->
+            <div class="bg-image" style="background-image: url('assets/media/various/bg_header.jpg');">
+                <div class="bg-image-overlay py-5">
+                    <header class="container d-md-flex align-items-md-center justify-content-md-between py-4">
+                        <div class="text-center text-md-left py-3">
+                            <a class="h4 text-dark font-weight-600" href="">
+                                <i class="far fa-fw fa-circle text-primary mr-1"></i> Web Application
+                            </a>
+                        </div>
+                        <div class="text-center text-md-right py-3">
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-primary px-3 py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-fw fa-user mr-1"></i> John Doe <i class="fa fa-fw fa-chevron-down ml-1"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right font-size-sm" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="">Profile</a>
+                                    <a class="dropdown-item" href="">Settings</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="">Projects</a>
+                                    <a class="dropdown-item" href="">Tasks</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="">Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <!-- END Header -->
+
+            <!-- Container -->
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-3">
+                        <!-- Toggle Navigation Button -->
+                        <button type="button" class="btn btn-secondary btn-block d-lg-none mb-4" onclick="$('#navigation').toggleClass('d-none');">
+                            <i class="fa fa-fw fa-bars mr-1"></i> Navigation
+                        </button>
+
+                        <!-- Navigation -->
+                        <div id="navigation" class="block d-none d-lg-block mr-lg-4">
+                            <div class="block-content">
+                                <nav class="nav nav-pills flex-column mb-0">
+                                    <div class="font-size-sm text-uppercase text-black-50 font-weight-bold mb-3">
+                                        Main
+                                    </div>
+                                    <a class="nav-link mb-2 active" href="">
+                                        <i class="fa fa-fw fa-chart-line mr-1"></i>
+                                        Dashboard
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-project-diagram mr-1"></i>
+                                        Projects
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-user-friends mr-1"></i>
+                                        Customers
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-euro-sign mr-1"></i>
+                                        Earnings
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-file-invoice mr-1"></i>
+                                        Invoices
+                                    </a>
+                                    <div class="font-size-sm text-uppercase text-black-50 font-weight-bold mb-3 mt-4">
+                                        Account
+                                    </div>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-inbox mr-1"></i>
+                                        Inbox
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-user-circle mr-1"></i>
+                                        Settings
+                                    </a>
+                                    <a class="nav-link mb-2" href="">
+                                        <i class="fa fa-fw fa-user-secret mr-1"></i>
+                                        Privacy
+                                    </a>
+                                    <a class="nav-link" href="">
+                                        <i class="fa fa-fw fa-flag-checkered mr-1"></i>
+                                        Notifications
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- END Navigation -->
+                    </div>
+                    <div class="col-lg-8 col-xl-9">
+                        <!-- Stats -->
+                        <div class="row">
+                            <div class="col-sm-6 col-lg-4">
+                                <a class="block" href="">
+                                    <div class="block-content block-content-full d-flex justify-content-between align-items-center">
+                                        <div class="py-2">
+                                            <div class="text-black font-size-lg font-weight-bold">$2,200</div>
+                                            <div class="text-muted text-uppercase font-size-sm font-weight-bold">Income</div>
+                                        </div>
+                                        <div class="font-weight-bold text-success font-size-sm py-2">
+                                            <i class="fa fa-caret-up mr-1"></i> 17.8%
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <a class="block" href="">
+                                    <div class="block-content block-content-full d-flex justify-content-between align-items-center">
+                                        <div class="py-2">
+                                            <div class="text-black font-size-lg font-weight-bold">$300</div>
+                                            <div class="text-muted text-uppercase font-size-sm font-weight-bold">Expenses</div>
+                                        </div>
+                                        <div class="font-weight-bold text-danger font-size-sm py-2">
+                                            <i class="fa fa-caret-up mr-1"></i> 5.3%
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class="block" href="">
+                                    <div class="block-content block-content-full d-flex justify-content-between align-items-center">
+                                        <div class="py-2">
+                                            <div class="text-black font-size-lg font-weight-bold">$12,600</div>
+                                            <div class="text-muted text-uppercase font-size-sm font-weight-bold">Wallet</div>
+                                        </div>
+                                        <div class="font-weight-bold text-success font-size-sm py-2">
+                                            <i class="fa fa-caret-up mr-1"></i> 3.4%
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- END Stats -->
+
+                        <!-- Page views -->
+                        <div class="block">
+                            <div class="block-content bg-light">
+                                <h3 class="font-size-sm text-uppercase font-weight-600 mb-0">Page Views</h3>
+                            </div>
+                            <div class="block-content">
+                                <div class="p-4">
+                                    <canvas class="js-chartjs-visitors" height="350"></canvas>
+                                </div>
+                            </div>
+                            <div class="block-content bg-light">
+                                <div class="row text-center">
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Page Views</div>
+                                        <div class="text-black font-size-lg font-weight-bold">5.3m</div>
+                                    </div>
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Conversion</div>
+                                        <div class="text-black font-size-lg font-weight-bold">5.4%</div>
+                                    </div>
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Visitors</div>
+                                        <div class="text-black font-size-lg font-weight-bold">2.6m</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Page views -->
+
+                        <!-- Projects -->
+                        <div class="block">
+                            <div class="block-content bg-light">
+                                <h3 class="font-size-sm text-uppercase mb-0">Projects</h3>
+                            </div>
+                            <div class="block-content">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless table-striped table-vcenter font-size-sm mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="width: 40px;"></th>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Status
+                                                </th>
+                                                <th class="text-center">
+                                                    Actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">
+                                                    5
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <strong>Project X</strong>
+                                                    </a>
+                                                    <p class="font-size-sm text-muted mb-0">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit..
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning p-2">Pending..</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    4
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <strong>Project A</strong>
+                                                    </a>
+                                                    <p class="font-size-sm text-muted mb-0">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit..
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-warning p-2">Pending..</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    3
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <strong>Project R</strong>
+                                                    </a>
+                                                    <p class="font-size-sm text-muted mb-0">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit..
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-danger p-2">Canceled</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    2
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <strong>Project W</strong>
+                                                    </a>
+                                                    <p class="font-size-sm text-muted mb-0">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit..
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-success p-2">Completed</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">
+                                                    1
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">
+                                                        <strong>Project K</strong>
+                                                    </a>
+                                                    <p class="font-size-sm text-muted mb-0">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit..
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <span class="badge badge-success p-2">Completed</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a class="btn btn-sm btn-light" href="javascript:void(0)">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="block-content bg-light">
+                                <div class="row text-center">
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Projects</div>
+                                        <div class="text-black font-size-lg font-weight-bold">34</div>
+                                    </div>
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Completed</div>
+                                        <div class="text-black font-size-lg font-weight-bold">70%</div>
+                                    </div>
+                                    <div class="col-sm-4 py-3">
+                                        <div class="text-muted mb-2 text-uppercase font-size-sm font-weight-bold">Clients</div>
+                                        <div class="text-black font-size-lg font-weight-bold">10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Projects -->
+                    </div>
+                </div>
+            </div>
+            <!-- END Content -->
+
+            <!-- Footer -->
+            <div class="bg-white">
+                <footer class="container font-size-sm d-md-flex justify-content-md-between py-4">
+                    <div class="text-center text-md-left py-2">
+                        <strong>Web App Dashboard</strong> &copy; <script>document.write((new Date()).getFullYear());</script>
+                    </div>
+                    <div class="text-center text-md-right py-2">
+                        Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600" href="https://pixelcave.com">pixelcave</a>
+                    </div>
+                </footer>
+            </div>
+            <!-- END Footer -->
+        </div>
+        <!-- END Page Container -->
+
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js" integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+
+        <!-- Custom JS -->
+        <script>
+            jQuery(function(){
+                // Set Global Chart.js configuration
+                Chart.defaults.global.defaultFontColor              = 'rgba(0,0,0,.75)';
+                Chart.defaults.scale.gridLines.color                = 'transparent';
+                Chart.defaults.scale.gridLines.zeroLineColor        = 'transparent';
+                Chart.defaults.global.elements.line.borderWidth     = 2;
+                Chart.defaults.global.elements.point.radius         = 6;
+                Chart.defaults.global.elements.point.hoverRadius    = 8;
+                Chart.defaults.global.tooltips.cornerRadius         = 4;
+                Chart.defaults.global.legend.display                = false;
+
+                // Get Chart Container
+                var chartVisitors = jQuery('.js-chartjs-visitors');
+
+                // Init Chart
+                var chart = new Chart(chartVisitors, {
+                    type: 'line',
+                    data: {
+                        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                        datasets: [
+                            {
+                                label: 'Visitors',
+                                fill: true,
+                                backgroundColor: 'rgba(46, 204, 113, .25)',
+                                borderColor: 'rgba(46, 204, 113, 1)',
+                                pointBackgroundColor: 'rgba(46, 204, 113, 1)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(46, 204, 113, 1)',
+                                data: [12234, 15532, 28933, 19132, 23432, 26679, 36789]
+                            }
+                        ]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    suggestedMin: 0,
+                                    suggestedMax: 40000
+                                }
+                            }]
+                        },
+                        tooltips: {
+                            intersect: false,
+                            callbacks: {
+                                label: function(tooltipItems, data) {
+                                    return ' ' + tooltipItems.yLabel + ' Page views';
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

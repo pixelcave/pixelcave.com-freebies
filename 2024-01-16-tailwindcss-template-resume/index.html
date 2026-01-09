@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Freebie 40 - Resume (Tailwind CSS) by pixelcave</title>
+
+    <meta
+      name="description"
+      content="Freebie 40 - Resume (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      /* Class based dark mode */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme configuration */
+      @theme {
+        /* Fonts */
+        --default-font-family: "Inter";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div class="min-h-dvh min-w-[320px] bg-white text-gray-800">
+      <!-- Info -->
+      <div class="container mx-auto max-w-(--breakpoint-lg) p-4 lg:p-8">
+        <div class="grid grid-cols-1 md:mt-12 md:grid-cols-6">
+          <!-- Personal -->
+          <div class="p-5 text-left md:col-span-2 md:text-right">
+            <img
+              class="inline-block md:w-2/3"
+              src="assets/photo-portrait-unsplash-7YVZYZeITc8.jpg"
+              alt="My portrait"
+            />
+            <div class="mt-5 space-y-2">
+              <p>New York, USA</p>
+              <p>+10 123 456 789</p>
+              <p>
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >john.doe@example.com</a
+                >
+              </p>
+              <p>
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://example.com</a
+                >
+              </p>
+            </div>
+          </div>
+          <!-- END Personal -->
+
+          <!-- Intro -->
+          <div class="p-5 md:col-span-4">
+            <h1 class="text-xl font-semibold">Web Developer</h1>
+            <h2 class="text-5xl leading-tight font-bold">John Martinez</h2>
+            <div class="my-5 h-1 rounded-sm bg-indigo-500"></div>
+            <p class="text-lg leading-relaxed text-slate-600">
+              I am a skilled web developer, proficient in HTML, CSS, and
+              JavaScript, who combines technical expertise with a passion for
+              creating visually appealing and user-friendly websites.
+            </p>
+          </div>
+          <!-- END Intro -->
+        </div>
+      </div>
+      <!-- END Info -->
+
+      <!-- Bio -->
+      <div
+        class="container mx-auto max-w-(--breakpoint-lg) space-y-10 p-4 lg:p-8"
+      >
+        <!-- Education -->
+        <div class="grid grid-cols-1 md:grid-cols-6">
+          <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+            <h3 class="text-lg font-bold uppercase">Education</h3>
+          </div>
+          <div class="space-y-6 px-5 py-2 md:col-span-4">
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2000-2005
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Bachelor in Computer Science, University London, UK
+              </h5>
+              <p class="leading-relaxed">
+                With a degree in Computer Science from the University of London,
+                UK, I cultivated the skills and knowledge that form the bedrock
+                of my expertise in web development and programming.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2005-2007
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Master in Computer Science, University NY, USA
+              </h5>
+              <p class="leading-relaxed">
+                I further honed my skills by pursuing a Master's degree in
+                Computer Science, delving deeper into advanced concepts and
+                emerging technologies to elevate my proficiency in web
+                development at New York University.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2007-2009
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Professional Studies in Web Developement, NY, USA
+              </h5>
+              <p class="leading-relaxed">
+                My journey continued with Professional Studies in Web
+                Development, where I delved into specialized courses, refining
+                my expertise and staying abreast of the latest industry trends
+                to excel in the dynamic world of web development.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END Education -->
+
+        <!-- Work Experience -->
+        <div class="grid grid-cols-1 md:grid-cols-6">
+          <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+            <h3 class="text-lg font-bold uppercase">Work Experience</h3>
+          </div>
+          <div class="space-y-6 px-5 py-2 md:col-span-4">
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2003-2008
+              </h4>
+              <h5 class="mb-1 font-bold">Web Designer at Web Inspired LLC</h5>
+              <p class="leading-relaxed">
+                As a Web Designer at Web Inspired LLC, I translated my passion
+                for aesthetics and functionality into captivating online
+                experiences, leveraging my skills to craft visually stunning and
+                user-centric websites for enhanced digital engagement.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2008-2020
+              </h4>
+              <h5 class="mb-1 font-bold">Freelance Web Developer</h5>
+              <p class="leading-relaxed">
+                Embracing the freedom of a Freelance Web Developer, I thrive on
+                the diversity of projects, employing my technical prowess to
+                bring clients' visions to life through customized and efficient
+                web solutions.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                2010-2020
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Part Time Web Developer at Web Stories LLC
+              </h5>
+              <p class="leading-relaxed">
+                Balancing my commitment as a Part-Time Web Developer at Web
+                Stories LLC, I contribute to the team's success by applying my
+                web development skills, ensuring seamless digital experiences
+                and collaborating on projects that enhance the online presence
+                of the company.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END Work Experience -->
+
+        <!-- Projects -->
+        <div class="grid grid-cols-1 md:grid-cols-6">
+          <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+            <h3 class="text-lg font-bold uppercase">Projects</h3>
+          </div>
+          <div class="space-y-6 px-5 py-2 md:col-span-4">
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                Laravel - Vue.js
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Project Management SaaS -
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://example.com</a
+                >
+              </h5>
+              <p class="leading-relaxed">
+                In my role with a Project Management SaaS, I specialize in
+                harnessing the power of Laravel and Vue.js to create robust and
+                efficient solutions, facilitating seamless project coordination
+                and enhancing the user experience within the dynamic realm of
+                software as a service.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-indigo-700">
+                Python - React
+              </h4>
+              <h5 class="mb-1 font-bold">
+                Job Listing SaaS -
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://example.com</a
+                >
+              </h5>
+              <p class="leading-relaxed">
+                Within the realm of Job Listing SaaS, I leverage my expertise in
+                Python and React to develop innovative solutions, ensuring a
+                streamlined and user-friendly platform that enhances the
+                recruitment process and transforms the way job opportunities are
+                accessed and managed.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- END Projects -->
+
+        <!-- Social -->
+        <div class="grid grid-cols-1 md:grid-cols-6">
+          <div class="px-5 py-2 text-left md:col-span-2 md:text-right">
+            <h3 class="text-lg font-bold uppercase">Social</h3>
+          </div>
+          <div class="space-y-6 px-5 py-2 md:col-span-4">
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-blue-600">LinkedIn</h4>
+              <h5 class="mb-1 font-bold">
+                Work Profile -
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://linkedin.com/john.doe</a
+                >
+              </h5>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-blue-500">X</h4>
+              <h5 class="mb-1 font-bold">
+                Work Profile -
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://x.com/john.doe</a
+                >
+              </h5>
+            </div>
+            <div>
+              <h4 class="mb-2 text-lg font-semibold text-blue-700">Facebook</h4>
+              <h5 class="mb-1 font-bold">
+                Personal Profile -
+                <a
+                  class="font-medium text-black underline hover:text-black/75"
+                  href="javascript:void(0)"
+                  >https://facebook.com/john.doe</a
+                >
+              </h5>
+            </div>
+
+            <!-- Footer -->
+            <footer class="space-y-2 py-12 text-sm text-gray-600">
+              <p class="font-semibold">
+                Resume &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+              </p>
+              <p class="inline-flex items-center gap-1">
+                <span>Crafted with</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  data-slot="icon"
+                  class="hi-mini hi-heart inline-block size-5 text-rose-500"
+                >
+                  <path
+                    d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z"
+                  />
+                </svg>
+                <span
+                  >by
+                  <a
+                    class="font-medium text-black underline hover:text-black/75"
+                    href="https://pixelcave.com"
+                    >pixelcave</a
+                  ></span
+                >
+              </p>
+            </footer>
+            <!-- END Footer -->
+          </div>
+        </div>
+        <!-- END Social -->
+      </div>
+      <!-- END Bio -->
+    </div>
+    <!-- END Page Container -->
+  </body>
+</html>

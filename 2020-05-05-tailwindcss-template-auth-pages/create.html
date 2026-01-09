@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Freebie 35 - Auth Pages (Tailwind CSS) by pixelcave</title>
+
+    <meta
+      name="description"
+      content="Freebie 35 - Auth Pages (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      /* Class based dark mode */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme configuration */
+      @theme {
+        /* Fonts */
+        --default-font-family: "Inter";
+      }
+
+      /* Forms */
+      [type="checkbox"]:checked,
+      [type="radio"]:checked {
+        border-color: transparent;
+        background-color: currentColor;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      [type="checkbox"]:checked {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div
+      class="relative flex min-h-dvh items-center justify-center bg-slate-100 text-slate-900"
+    >
+      <!-- Waves Background -->
+      <div class="absolute right-0 bottom-0 left-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 -100 1440 320"
+          class="text-slate-200"
+        >
+          <path
+            fill="currentColor"
+            fill-opacity="1"
+            d="M0,96L26.7,112C53.3,128,107,160,160,181.3C213.3,203,267,213,320,192C373.3,171,427,117,480,122.7C533.3,128,587,192,640,229.3C693.3,267,747,277,800,245.3C853.3,213,907,139,960,138.7C1013.3,139,1067,213,1120,224C1173.3,235,1227,181,1280,154.7C1333.3,128,1387,128,1413,128L1440,128L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+      <!-- END Waves Background -->
+
+      <!-- Create Account Section -->
+      <div class="relative w-full max-w-xl px-5 py-6">
+        <!-- Heading -->
+        <div class="mb-6 text-center">
+          <h3
+            class="inline-flex items-center gap-2 text-2xl font-extrabold sm:text-3xl"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              data-slot="icon"
+              class="hi-micro hi-cube inline-block size-8 text-indigo-500"
+            >
+              <path
+                d="M8.372 1.349a.75.75 0 0 0-.744 0l-4.81 2.748L8 7.131l5.182-3.034-4.81-2.748ZM14 5.357 8.75 8.43v6.005l4.872-2.784A.75.75 0 0 0 14 11V5.357ZM7.25 14.435V8.43L2 5.357V11c0 .27.144.518.378.651l4.872 2.784Z"
+              />
+            </svg>
+            Web Application
+          </h3>
+          <p class="font-medium text-slate-600">
+            Create your own account in one single step
+          </p>
+        </div>
+        <!-- END Heading -->
+
+        <!-- Form -->
+        <div
+          class="rounded-sm border border-slate-200 bg-white p-6 shadow-xs lg:p-10"
+        >
+          <form class="space-y-4" onsubmit="return false;">
+            <div class="space-y-1">
+              <label class="inline-block font-medium text-slate-700" for="name"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                class="block w-full appearance-none rounded-sm border border-slate-200 px-4 py-3 outline-hidden focus:border-blue-500 focus:ring-0"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+            <div class="space-y-1">
+              <label class="inline-block font-medium text-slate-700" for="email"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                class="block w-full appearance-none rounded-sm border border-slate-200 px-4 py-3 outline-hidden focus:border-blue-500 focus:ring-0"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="inline-block font-medium text-slate-700"
+                for="password"
+                >Password</label
+              >
+              <input
+                type="password"
+                id="password"
+                class="block w-full appearance-none rounded-sm border border-slate-200 px-4 py-3 outline-hidden focus:border-blue-500 focus:ring-0"
+                placeholder="Choose a strong password"
+                required
+              />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="inline-block font-medium text-slate-700"
+                for="password_confirm"
+              >
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="password_confirm"
+                class="block w-full appearance-none rounded-sm border border-slate-200 px-4 py-3 outline-hidden focus:border-blue-500 focus:ring-0"
+                placeholder="Enter again your chosen password"
+                required
+              />
+            </div>
+            <div>
+              <label class="block">
+                <input
+                  type="checkbox"
+                  class="inline-block size-4 appearance-none rounded-sm border border-slate-300 bg-white align-middle leading-none text-blue-500 outline-hidden focus:border-blue-500 focus:ring-0"
+                  required
+                />
+                <span class="ml-1 text-sm text-slate-700">
+                  I accept terms &amp; conditions
+                </span>
+              </label>
+            </div>
+            <div>
+              <button
+                type="submit"
+                class="block w-full rounded-sm bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-800"
+              >
+                Create Account
+              </button>
+            </div>
+            <div class="text-center">
+              <a
+                class="text-sm text-slate-600 hover:text-slate-950 hover:underline"
+                href="index.html"
+                >Return to log in</a
+              >
+            </div>
+          </form>
+        </div>
+        <!-- END Form -->
+
+        <!-- Footer -->
+        <div class="mt-6 text-center text-xs text-slate-600">
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+
+          &copy;
+          <a
+            class="font-medium text-slate-600 hover:text-slate-700 hover:underline"
+            href="javascript:void(0)"
+            >Terms &amp; Conditions</a
+          >
+        </div>
+        <!-- END Footer -->
+      </div>
+      <!-- END Create Account Section -->
+    </div>
+    <!-- END Page Container -->
+  </body>
+</html>
