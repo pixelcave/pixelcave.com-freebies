@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Freebie 69 - Resume Modern (Tailwind CSS) by pixelcave</title>
+
+    <meta
+      name="description"
+      content="Freebie 69 - Resume Modern (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.png"
+      type="image/png"
+    />
+
+    <!-- Inter + JetBrains Mono web fonts from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mostly for development/testing purposes) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS v4 Configuration -->
+    <style type="text/tailwindcss">
+      /* Class based dark mode */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* Theme configuration */
+      @theme {
+        /* Fonts */
+        --default-font-family: "Inter";
+        --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+        /* Cream */
+        --color-cream-50: oklch(0.983 0.003 89);
+        --color-cream-100: oklch(0.974 0.004 89);
+        --color-cream-200: oklch(0.948 0.006 90);
+        --color-cream-300: oklch(0.918 0.005 90);
+        --color-cream-400: oklch(0.835 0.008 89);
+        --color-cream-500: oklch(0.677 0.009 89);
+        --color-cream-600: oklch(0.553 0.010 89);
+        --color-cream-700: oklch(0.408 0.007 89);
+        --color-cream-800: oklch(0.288 0.008 89);
+        --color-cream-900: oklch(0.205 0.007 89);
+        --color-cream-950: oklch(0.155 0.005 89);
+
+        /* Brand */
+        --color-brand-50: oklch(0.971 0.014 55);
+        --color-brand-100: oklch(0.929 0.038 60);
+        --color-brand-200: oklch(0.864 0.083 55);
+        --color-brand-300: oklch(0.789 0.142 51);
+        --color-brand-400: oklch(0.704 0.187 43);
+        --color-brand-500: oklch(0.636 0.225 36);
+        --color-brand-600: oklch(0.563 0.193 36);
+        --color-brand-700: oklch(0.470 0.158 38);
+        --color-brand-800: oklch(0.372 0.124 39);
+        --color-brand-900: oklch(0.281 0.092 39);
+        --color-brand-950: oklch(0.183 0.061 41);
+
+        /* Timeline pastels */
+        --color-peach: oklch(0.769 0.064 41);
+        --color-mint: oklch(0.786 0.063 144);
+        --color-azure: oklch(0.766 0.062 246);
+        --color-lavender: oklch(0.738 0.072 297);
+        --color-gold: oklch(0.633 0.111 65);
+      }
+    </style>
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine.js (x-cloak) -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div
+      x-data="{
+        darkMode: false,
+        toggleDarkMode() {
+          this.darkMode = ! this.darkMode;
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+      class="min-h-dvh min-w-[320px] bg-cream-100 text-cream-900 dark:bg-cream-950 dark:text-cream-200"
+    >
+      <!-- Top Nav -->
+      <header class="border-b border-cream-300 dark:border-white/10">
+        <div
+          class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-10"
+        >
+          <!-- Wordmark -->
+          <a
+            href="javascript:void(0)"
+            class="inline-flex items-baseline gap-1 font-medium tracking-tight"
+          >
+            shaun.castillo
+          </a>
+          <!-- END Wordmark -->
+
+          <!-- Right side: nav + actions -->
+          <div class="flex items-center gap-2 sm:gap-5">
+            <nav class="hidden items-center gap-6 md:flex">
+              <a
+                href="#about"
+                class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+                >About</a
+              >
+              <a
+                href="#experience"
+                class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+                >Experience</a
+              >
+              <a
+                href="#projects"
+                class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+                >Projects</a
+              >
+              <a
+                href="#contact"
+                class="text-sm font-medium text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+                >Contact</a
+              >
+            </nav>
+
+            <!-- Toggle Dark Mode -->
+            <button
+              x-on:click="toggleDarkMode()"
+              type="button"
+              class="inline-flex size-9 items-center justify-center rounded-md text-cream-700 hover:text-cream-900 dark:text-cream-500 dark:hover:text-white"
+              aria-label="Toggle theme"
+            >
+              <svg
+                x-show="!darkMode"
+                x-cloak
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="inline-block size-5"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2" />
+                <path d="M12 20v2" />
+                <path d="m4.93 4.93 1.41 1.41" />
+                <path d="m17.66 17.66 1.41 1.41" />
+                <path d="M2 12h2" />
+                <path d="M20 12h2" />
+                <path d="m6.34 17.66-1.41 1.41" />
+                <path d="m19.07 4.93-1.41 1.41" />
+              </svg>
+              <svg
+                x-show="darkMode"
+                x-cloak
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="inline-block size-5"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            </button>
+
+            <!-- Download CTA (ink button) -->
+            <a
+              href="javascript:void(0)"
+              class="inline-flex h-11 items-center gap-2 rounded-md bg-cream-900 px-5 text-sm font-medium text-cream-100 hover:bg-cream-800 dark:bg-white dark:text-cream-950 dark:hover:bg-white/90"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-4"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+              <span class="hidden sm:inline">Download CV</span>
+              <span class="sm:hidden">CV</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <!-- END Top Nav -->
+
+      <main class="mx-auto max-w-6xl px-5 lg:px-10">
+        <!-- Hero band -->
+        <section class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <!-- Left: identity -->
+            <div class="lg:col-span-7">
+              <span
+                class="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+              >
+                <span class="size-1.5 rounded-full bg-brand-500"></span>
+                Available for work · NYC
+              </span>
+              <h1
+                class="mt-6 text-4xl font-normal leading-[1.05] tracking-[-0.03em] sm:text-5xl md:text-6xl lg:text-7xl"
+              >
+                Shaun Castillo<span class="text-brand-500">.</span>
+              </h1>
+              <p
+                class="mt-6 max-w-xl text-base/relaxed text-cream-700 dark:text-cream-500"
+              >
+                A web developer who treats the browser like a magazine.
+                Proficient in HTML, CSS, and JavaScript, combining technical
+                expertise with a passion for crafting visually composed,
+                user-friendly products.
+              </p>
+
+              <!-- CTAs -->
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <a
+                  href="#contact"
+                  class="inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600"
+                >
+                  Get in touch
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="size-4"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <a
+                  href="#experience"
+                  class="inline-flex h-10 items-center gap-2 rounded-md border border-cream-400 bg-white px-5 text-sm font-medium text-cream-900 hover:bg-cream-50 dark:border-white/15 dark:bg-transparent dark:text-white dark:hover:bg-white/5"
+                >
+                  View experience
+                </a>
+              </div>
+              <!-- END CTAs -->
+
+              <!-- Stat strip -->
+              <dl
+                class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-cream-300 pt-8 dark:border-white/10"
+              >
+                <div>
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Years
+                  </dt>
+                  <dd
+                    class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight"
+                  >
+                    17+
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Projects
+                  </dt>
+                  <dd
+                    class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight"
+                  >
+                    120
+                  </dd>
+                </div>
+                <div>
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Clients
+                  </dt>
+                  <dd
+                    class="mt-1 text-[1.625rem] font-normal leading-tight tracking-tight"
+                  >
+                    40
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <!-- END Left: identity -->
+
+            <!-- Right: portrait card -->
+            <div class="lg:col-span-5">
+              <div
+                class="relative overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5"
+              >
+                <img
+                  src="assets/christian-buehner-DItYlc26zVI-unsplash.jpg"
+                  class="aspect-4/5 w-full object-cover"
+                  alt="Shaun Castillo portrait"
+                />
+                <!-- Caption pill overlay -->
+                <div class="absolute top-4 left-4 right-4 flex justify-between">
+                  <span
+                    class="inline-flex items-center gap-1.5 rounded-full bg-white/95/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100 backdrop-blur"
+                  >
+                    <span class="size-1.5 rounded-full bg-mint"></span>
+                    Online
+                  </span>
+                  <span
+                    class="rounded-full bg-white/95/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100 backdrop-blur"
+                  >
+                    Est. 2007
+                  </span>
+                </div>
+                <!-- END Caption pill overlay -->
+              </div>
+            </div>
+            <!-- END Right: portrait card -->
+          </div>
+        </section>
+        <!-- END Hero -->
+
+        <!-- About / Tech stack as code block -->
+        <section
+          id="about"
+          class="border-b border-cream-300 py-20 dark:border-white/10"
+        >
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                >01 · About</span
+              >
+              <h2
+                class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl"
+              >
+                Calm code, clear systems.
+              </h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                I build production interfaces and the design systems behind
+                them. Pixel-honest, accessible by default, and tuned to be
+                pleasant to read at 2am.
+              </p>
+            </div>
+            <!-- END Left: about -->
+
+            <!-- Code block -->
+            <div class="min-w-0 lg:col-span-8">
+              <div
+                class="overflow-hidden rounded-xl border border-cream-300 bg-white dark:border-white/10 dark:bg-white/5"
+              >
+                <div
+                  class="flex items-center gap-2 border-b border-cream-300 px-4 py-3 dark:border-white/10"
+                >
+                  <span class="size-2.5 rounded-full bg-peach"></span>
+                  <span class="size-2.5 rounded-full bg-gold"></span>
+                  <span class="size-2.5 rounded-full bg-mint"></span>
+                  <span
+                    class="ml-3 font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >~/about/shaun.ts</span
+                  >
+                </div>
+                <pre
+                  class="overflow-x-auto px-5 py-5 font-mono text-[13px] leading-relaxed text-cream-900 dark:text-cream-200"
+                ><span class="text-cream-600 dark:text-cream-500">// stack</span>
+<span class="text-gold">const</span> stack = {
+  languages: [<span class="text-mint">"TypeScript"</span>, <span class="text-mint">"Python"</span>, <span class="text-mint">"PHP"</span>],
+  frontend:  [<span class="text-mint">"React"</span>, <span class="text-mint">"Vue"</span>, <span class="text-mint">"Tailwind CSS"</span>],
+  backend:   [<span class="text-mint">"Node"</span>, <span class="text-mint">"Laravel"</span>, <span class="text-mint">"Postgres"</span>],
+  tooling:   [<span class="text-mint">"Vite"</span>, <span class="text-mint">"Docker"</span>, <span class="text-mint">"GitHub Actions"</span>],
+};</pre>
+              </div>
+
+              <!-- Skill timeline pills -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-peach/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Thinking · Architecture</span
+                >
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-mint/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Grep · Audits</span
+                >
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Read · Research</span
+                >
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Edit · Refactor</span
+                >
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-gold/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Done · Ship</span
+                >
+              </div>
+              <!-- END Skill timeline pills -->
+            </div>
+            <!-- END Code block -->
+          </div>
+        </section>
+        <!-- END About -->
+
+        <!-- Experience -->
+        <section
+          id="experience"
+          class="border-b border-cream-300 py-20 dark:border-white/10"
+        >
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                >02 · Experience</span
+              >
+              <h2
+                class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl"
+              >
+                A practiced hand.
+              </h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Seventeen years spanning agency, freelance, and product roles,
+                shipping the kind of work that quietly does its job.
+              </p>
+            </div>
+
+            <ul class="space-y-3 lg:col-span-8">
+              <li
+                class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5"
+              >
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Web Designer
+                  </h3>
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2003 - 2008</span
+                  >
+                </div>
+                <p class="mt-1 text-sm font-medium text-brand-500">
+                  Web Inspired LLC
+                </p>
+                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                  Translated a passion for aesthetics and functionality into
+                  captivating online experiences, crafting visually stunning,
+                  user-centric websites for enhanced digital engagement.
+                </p>
+              </li>
+
+              <li
+                class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5"
+              >
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Freelance Web Developer
+                  </h3>
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2008 - 2020</span
+                  >
+                </div>
+                <p class="mt-1 text-sm font-medium text-brand-500">
+                  Independent
+                </p>
+                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                  Thrived on the diversity of projects, applying technical
+                  prowess to bring client visions to life through customized
+                  and efficient web solutions across a dozen industries.
+                </p>
+              </li>
+
+              <li
+                class="rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5"
+              >
+                <div class="flex flex-wrap items-baseline justify-between gap-3">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Part-Time Web Developer
+                  </h3>
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2010 - 2020</span
+                  >
+                </div>
+                <p class="mt-1 text-sm font-medium text-brand-500">
+                  Web Stories LLC
+                </p>
+                <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                  Contributed to the team's success by ensuring seamless
+                  digital experiences and collaborating on projects that
+                  enhanced the company's online presence.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- END Experience -->
+
+        <!-- Education -->
+        <section class="border-b border-cream-300 py-20 dark:border-white/10">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                >03 · Education</span
+              >
+              <h2
+                class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl"
+              >
+                The foundation.
+              </h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Computer science in two countries, with a continuous habit of
+                relearning the basics every year.
+              </p>
+            </div>
+
+            <ol
+              class="divide-y divide-cream-300 lg:col-span-8 dark:divide-white/10"
+            >
+              <li class="grid grid-cols-12 gap-4 py-5 first:pt-0">
+                <div class="col-span-12 sm:col-span-3">
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2000 - 2005</span
+                  >
+                </div>
+                <div class="col-span-12 sm:col-span-9">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Bachelor in Computer Science
+                  </h3>
+                  <p
+                    class="mt-1 text-sm font-medium text-cream-700 dark:text-cream-500"
+                  >
+                    University of London, UK
+                  </p>
+                  <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                    Cultivated the skills and knowledge that form the bedrock
+                    of my expertise in web development and programming.
+                  </p>
+                </div>
+              </li>
+              <li class="grid grid-cols-12 gap-4 py-5">
+                <div class="col-span-12 sm:col-span-3">
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2005 - 2007</span
+                  >
+                </div>
+                <div class="col-span-12 sm:col-span-9">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Master in Computer Science
+                  </h3>
+                  <p
+                    class="mt-1 text-sm font-medium text-cream-700 dark:text-cream-500"
+                  >
+                    New York University, USA
+                  </p>
+                  <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                    Honed skills by delving deeper into advanced concepts and
+                    emerging technologies in modern web development.
+                  </p>
+                </div>
+              </li>
+              <li class="grid grid-cols-12 gap-4 py-5 last:pb-0">
+                <div class="col-span-12 sm:col-span-3">
+                  <span
+                    class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                    >2007 - 2009</span
+                  >
+                </div>
+                <div class="col-span-12 sm:col-span-9">
+                  <h3
+                    class="text-[1.375rem] font-normal leading-snug tracking-tight"
+                  >
+                    Professional Studies, Web Development
+                  </h3>
+                  <p
+                    class="mt-1 text-sm font-medium text-cream-700 dark:text-cream-500"
+                  >
+                    New York, USA
+                  </p>
+                  <p class="mt-3 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                    Specialized courses refining expertise and tracking the
+                    latest industry trends in the dynamic world of web work.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <!-- END Education -->
+
+        <!-- Projects -->
+        <section
+          id="projects"
+          class="border-b border-cream-300 py-20 dark:border-white/10"
+        >
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                >04 · Projects</span
+              >
+              <h2
+                class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl"
+              >
+                Selected work.
+              </h2>
+            </div>
+            <a
+              href="javascript:void(0)"
+              class="text-sm font-medium text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+              >See the archive →</a
+            >
+          </div>
+
+          <div class="mt-10 grid gap-4 md:grid-cols-2">
+            <!-- Project card 1 -->
+            <article
+              class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-lavender/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Laravel · Vue.js</span
+                >
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                  >01</span
+                >
+              </div>
+              <h3
+                class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight"
+              >
+                Project Management SaaS
+              </h3>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Harnessed Laravel and Vue.js to build a robust, efficient
+                platform, facilitating seamless project coordination and
+                lifting the daily UX of busy teams.
+              </p>
+              <a
+                href="javascript:void(0)"
+                class="mt-5 inline-flex items-center gap-2 font-mono text-xs text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+              >
+                example.com
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
+            </article>
+            <!-- END Project card 1 -->
+
+            <!-- Project card 2 -->
+            <article
+              class="group flex flex-col rounded-xl border border-cream-300 bg-white p-6 dark:border-white/10 dark:bg-white/5"
+            >
+              <div class="flex items-center justify-between">
+                <span
+                  class="inline-flex items-center gap-1.5 rounded-full bg-azure/25 px-2.5 py-1 text-xs font-semibold uppercase tracking-tight text-cream-900 dark:text-cream-100"
+                  >Python · React</span
+                >
+                <span class="font-mono text-xs text-cream-600 dark:text-cream-500"
+                  >02</span
+                >
+              </div>
+              <h3
+                class="mt-5 text-[1.375rem] font-normal leading-snug tracking-tight"
+              >
+                Job Listing SaaS
+              </h3>
+              <p class="mt-3 flex-1 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Leveraged Python and React to deliver a streamlined,
+                user-friendly platform that enhances the recruitment process
+                and reshapes how job opportunities are accessed.
+              </p>
+              <a
+                href="javascript:void(0)"
+                class="mt-5 inline-flex items-center gap-2 font-mono text-xs text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+              >
+                example.com
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg>
+              </a>
+            </article>
+            <!-- END Project card 2 -->
+          </div>
+        </section>
+        <!-- END Projects -->
+
+        <!-- Contact / Social -->
+        <section id="contact" class="py-20">
+          <div class="grid gap-12 lg:grid-cols-12">
+            <div class="lg:col-span-4">
+              <span
+                class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                >05 · Contact</span
+              >
+              <h2
+                class="mt-3 text-3xl font-normal leading-tight tracking-tight md:text-4xl"
+              >
+                Let's build something quiet and useful.
+              </h2>
+              <p class="mt-5 text-sm/relaxed text-cream-700 dark:text-cream-500">
+                Open to freelance, contract, and product-team roles. Usually
+                reply within a day.
+              </p>
+              <a
+                href="mailto:shaun.castillo@example.com"
+                class="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-brand-500 px-5 text-sm font-medium text-white hover:bg-brand-600"
+              >
+                shaun.castillo@example.com
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="size-4"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <!-- END Left: contact intro -->
+
+            <!-- Contact details list -->
+            <div class="lg:col-span-8">
+              <dl
+                class="grid grid-cols-1 divide-y divide-cream-300 rounded-xl border border-cream-300 bg-white sm:grid-cols-2 sm:divide-y-0 sm:divide-x dark:divide-white/10 dark:border-white/10 dark:bg-white/5"
+              >
+                <div class="p-6">
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Location
+                  </dt>
+                  <dd class="mt-2 font-medium">New York, USA</dd>
+                </div>
+                <div class="p-6">
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Phone
+                  </dt>
+                  <dd class="mt-2 font-mono text-sm">+10 123 456 789</dd>
+                </div>
+                <div class="border-t border-cream-300 p-6 dark:border-white/10">
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Website
+                  </dt>
+                  <dd class="mt-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+                      >example.com</a
+                    >
+                  </dd>
+                </div>
+                <div class="border-t border-cream-300 p-6 dark:border-white/10">
+                  <dt
+                    class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                  >
+                    Email
+                  </dt>
+                  <dd class="mt-2">
+                    <a
+                      href="javascript:void(0)"
+                      class="font-mono text-sm text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+                      >shaun.castillo@example.com</a
+                    >
+                  </dd>
+                </div>
+              </dl>
+              <!-- END Contact details list -->
+
+              <!-- Social links -->
+              <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+                  >
+                    <div>
+                      <span
+                        class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                        >LinkedIn</span
+                      >
+                      <p class="mt-1 text-sm font-medium">Work profile</p>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="size-4 text-cream-600 dark:text-cream-500"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+                  >
+                    <div>
+                      <span
+                        class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                        >X</span
+                      >
+                      <p class="mt-1 text-sm font-medium">Work profile</p>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="size-4 text-cream-600 dark:text-cream-500"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="javascript:void(0)"
+                    class="flex items-center justify-between rounded-xl border border-cream-300 bg-white px-5 py-4 hover:bg-cream-50 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
+                  >
+                    <div>
+                      <span
+                        class="text-[11px] font-semibold uppercase tracking-[0.08em] text-cream-600 dark:text-cream-500"
+                        >Facebook</span
+                      >
+                      <p class="mt-1 text-sm font-medium">Personal profile</p>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="size-4 text-cream-600 dark:text-cream-500"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="M7 17 17 7" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- END Social links -->
+          </div>
+        </section>
+        <!-- END Contact / Social -->
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-cream-300 dark:border-white/10">
+        <div
+          class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-5 py-8 text-sm text-cream-700 sm:flex-row sm:items-center lg:px-10 dark:text-cream-500"
+        >
+          <p>
+            Resume &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            · Shaun Castillo
+          </p>
+          <p class="inline-flex items-center gap-1.5">
+            <span>Crafted with</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="inline-block size-4 text-brand-500"
+            >
+              <path
+                d="m9.653 16.915-.005-.003-.019-.01a20.759 20.759 0 0 1-1.162-.682 22.045 22.045 0 0 1-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 0 1 8-2.828A4.5 4.5 0 0 1 18 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 0 1-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 0 1-.69.001l-.002-.001Z"
+              />
+            </svg>
+            <span
+              >by
+              <a
+                href="https://pixelcave.com"
+                class="font-medium text-cream-900 underline decoration-cream-400 underline-offset-4 hover:decoration-cream-900 dark:text-white dark:decoration-white/30 dark:hover:decoration-white"
+                >pixelcave</a
+              ></span
+            >
+          </p>
+        </div>
+      </footer>
+      <!-- END Footer -->
+    </div>
+    <!-- END Page Container -->
+  </body>
+</html>
