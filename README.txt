@@ -15,6 +15,7 @@ If you haven't already, you can subscribe to our newsletter for more exclusive f
 
 Be sure to also check out our products:
 
+- https://codedvisuals.com
 - https://tailkit.com
 - https://pixelcave.com
 - https://1.envato.market/ydb
